@@ -7,13 +7,18 @@ module.exports = async function App(context) {
         {
           contentType: "text",
           title: "Yes! I want a prize.",
-          payload: "Yes",
+          payload: "Yes! I want a prize.",
+        },
+        {
+          contentType: "text",
+          title: "No. I don't want a prize.",
+          payload: "No. I don't want a prize.",
         },
       ],
     });
-  } else if (context.event.text === "Yes") {
+  } else if (context.event.text === "Yes! I want a prize.") {
     await context.sendText("Sure! Give it a spin.");
-  } else if (context.event.text === "No") {
+  } else if (context.event.text === "No. I don't want a prize.") {
     await context.sendText(
       "That's okay! What did you want to talk to us about?"
     );
